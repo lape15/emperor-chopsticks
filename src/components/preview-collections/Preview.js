@@ -1,13 +1,14 @@
 import React from 'react';
+import  CollectionItem from '../collections/collection'
 
  const preview = ({title, items}) => (
-    <div class="flex-wrap -mx-2">
-    <p class="font-mono text-xl mb-2 ">{title.toUpperCase()}</p>
-        { items.map(item => (
-            <div class=" bg-auto flex-1 text-black-700 text-center bg-center px-4 py-2 m-2 h-48 w-48 " key={item.id}>
-            <p class="font-mono text-xl mb-2 ">{item.name}</p>
-            </div>
-         ))}
+    <div class="flex-wrap -mx-2 text-center">
+    <p class="font-bold text-xl mb-2 ">{title.toUpperCase()}</p>
+        { items
+            .filter((item,index) => index < 4 )
+            .map(({id, ...otherItemProps}) => (
+            <CollectionItem key={id} {...otherItemProps}/>
+           ))}
     </div>
  )
 export default preview;
