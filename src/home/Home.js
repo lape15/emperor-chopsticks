@@ -3,28 +3,62 @@ import React from 'react';
 // import Food from '../food/Food'
 
 class Home extends React.Component {
+    state = {
+        stores : [
+            {
+              title: 'hats',
+              imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+              id: 1,
+              linkUrl: 'shop/hats'
+            },
+            {
+              title: 'jackets',
+              imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+              id: 2,
+              linkUrl: 'shop/jackets'
+            },
+            {
+              title: 'sneakers',
+              imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+              id: 3,
+              linkUrl: 'shop/sneakers'
+            },
+            {
+              title: 'womens',
+              imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+              size: 'large',
+              id: 4,
+              linkUrl: 'shop/womens'
+            },
+            {
+              title: 'mens',
+              imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+              size: 'large',
+              id: 5,
+              linkUrl: 'shop/mens'
+            }
+          ]
+    }
     render(){
-        // const {match} = this.props;
-        return(
-            <>
-            <div>
-            <h1>Homepage of Life</h1>
-        <div className="w-full max-w-md bg-gray-800" >
-                <form action="" className=" bg-white shadow-md rounded px-8 py-8 pt-8">
-                    <div className="px-4 pb-4">
-                        <label htmlFor="email" className="text-sm block font-bold  pb-2">EMAIL ADDRESS</label>
-                            <input type="email" name="email" id="m" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 " placeholder="Johnbull@example.com"/>
-                    </div>
-                    <div  className="px-4 pb-4">
-                        <label htmlFor="password" className="text-sm block font-bold pb-2">PASSWORD</label>
-                            <input type="password" name="password" id="n" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300" placeholder="Enter your password"/>
-                    </div>
-                     <div>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Sign In</button>
-                    </div>
-                </form>
-              </div>
-             </div>
+        // const {stores} = this.state;
+        
+           let displayStore = this.state.stores.map(({title, id, imageUrl, size}) => ( 
+           <div class=" bg-auto flex-1 text-black-700 text-center bg-center px-4 py-2 m-2 h-48 w-48 " key={id}  style={{
+               backgroundImage: `url(${imageUrl})`
+            }}>
+           <div class="flex-1 text-black text-center w-30 bg-transparent hover:bg-white px-6 py-1 m-2 cursor-pointer" >
+               <p class="font-mono text-xl mb-2 ">{title.toUpperCase()}</p>
+               
+            <i class="fas fa-shopping-cart"></i>
+               </div>
+           </div>
+       
+       ))
+       return(
+        <>
+        <div class="flex -mx-2">
+       {displayStore}
+       </div>
         </>
         )
     }

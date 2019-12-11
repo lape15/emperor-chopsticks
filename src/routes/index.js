@@ -1,5 +1,6 @@
 import Home from '../home/Home';
-import Food from '../food/Food';
+import Shop from '../pages/Shop';
+
 // import { on } from 'cluster';
 
 var routes = [
@@ -10,10 +11,11 @@ var routes = [
         component: Home,
     },
     {
-        path: "/menu",
-        name: "food",
-        component: Food
+        path: "/shop",
+        name: "shop",
+        component: Shop
     }
+  
 ]
 
 export default routes;

@@ -3,6 +3,9 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    fontFamily:{
+      'sans-serif' : 'Open Sans Condensed'
+    },
     screens: {
       sm: '640px',
       md: '768px',
