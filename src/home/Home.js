@@ -43,7 +43,7 @@ class Home extends React.Component {
         // const {stores} = this.state;
         
            let displayStore = this.state.stores.map(({title, id, imageUrl, size}) => ( 
-           <div class=" bg-auto flex-1 text-black-700 text-center bg-center px-4 py-2 m-2 h-48 w-48 " key={id}  style={{
+           <div class=" bg-auto flex-1 text-black-700 text-center bg-center px-4 py-2 m-2 h-48 w-48 ml-4 mr-2" key={id}  style={{
                backgroundImage: `url(${imageUrl})`
             }}>
            <div class="flex-1 text-black text-center w-30 bg-transparent hover:bg-white px-6 py-1 m-2 cursor-pointer" >

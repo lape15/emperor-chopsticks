@@ -17,7 +17,7 @@ export default class SignUp extends React.Component{
     handleFormSubmit = async event => {
         event.preventDefault();
         const {displayName,email,password,confirmPassword} = this.state;
-        if(password = confirmPassword){
+        if(password != confirmPassword){
             alert('Password do not match!');
             return;
         }try{
@@ -104,9 +104,9 @@ export default class SignUp extends React.Component{
                             />
                             
             </div>
-            <div class="flex mb-4 px-3  mt-10 ">
+            <div class="flex justify-center mb-4 px-3 mt-10 ">
             
-            <button class="bg-black w-48 h-16 mr-24 text-white hover:text-black text-center hover:bg-white font-mono py-2 px-4 border-b-4 squared inline-flex items-center" type="submit">
+            <button class="bg-black w-48 h-16 mr-24 text-white hover:text-black tracking-widest text-center hover:bg-transparent font-mono py-2 px-4 border-b-4 squared inline-flex items-center" type="submit">
             SIGN UP
           </button>
             </div>
