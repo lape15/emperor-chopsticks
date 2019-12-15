@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInput from '../form-input/formInput';
-import {signInWithGoogle} from '../../firebase/firebase.util'
+import {signInWithGoogle, auth} from '../../firebase/firebase.util'
 
 export default class SignIn extends React.Component {
     constructor(){
@@ -11,14 +11,22 @@ export default class SignIn extends React.Component {
         }
     }
 
-     handleFormSubmit = (e) => {
+     handleFormSubmit = async e => {
             e.preventDefault();
+        const {email, password} = this.state;
+    try{
+        await auth.signInWithEmailAndPassword(email, password);
+        this.setState({
+            email : '',
+            password : ''
+        });
+    } 
+    catch(error) {
+        console.log(error)
+    }
+           
+}
 
-            this.setState({
-                email : '',
-                password : ''
-            })
-        }
 
     handleChange = (e) => {
         this.setState({
@@ -34,7 +42,7 @@ export default class SignIn extends React.Component {
             <p class="italic leading-loose ml-2 text-black bg-transparent font-medium px-4 py-2 m-2">Sign in with your email and password</p>
             <form class="w-full max-w-sm " onSubmit={this.handleFormSubmit}>
             <div class="flex items-center border-b border-b-2 border-black py-2">
-            <label class="italic block lowercase tracking-normal text-black text-xl font-medium mb-0" 
+            <label class="italic block lowercase tracking-normal text-black text-l font-light mb-0" 
             for="grid-first-name">email:
         </label>
             <FormInput
@@ -48,7 +56,7 @@ export default class SignIn extends React.Component {
             
             </div>
             <div class="flex items-center border-b border-b-2 border-black py-2">
-            <label class="italic block lowercase tracking-wide text-black text-xl font-medium mb-2" for="grid-first-name">password:</label>
+            <label class="italic block lowercase tracking-wide text-black text-l font-light mb-2" for="grid-first-name">password:</label>
             <FormInput
                             type="password"  
                           

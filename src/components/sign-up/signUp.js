@@ -17,7 +17,7 @@ export default class SignUp extends React.Component{
     handleFormSubmit = async event => {
         event.preventDefault();
         const {displayName,email,password,confirmPassword} = this.state;
-        if(password != confirmPassword){
+        if(password = confirmPassword){
             alert('Password do not match!');
             return;
         }try{
@@ -52,7 +52,7 @@ export default class SignUp extends React.Component{
             <p class="italic leading-loose ml-2 text-black bg-transparent font-medium px-4 py-2 m-2">Sign up with your email and password</p>
             <form class="w-full max-w-sm " onSubmit={this.handleFormSubmit}>
             <div class="flex items-center border-b border-b-2 border-black py-2">
-            <label class="italic block lowercase tracking-normal text-black text-xl font-medium mb-0" 
+            <label class="italic block lowercase tracking-normal text-black text-l font-light mb-0" 
             for="grid-first-name">Display Name:
         </label>
             <FormInput
@@ -66,7 +66,7 @@ export default class SignUp extends React.Component{
             
             </div>
             <div class="flex items-center border-b border-b-2 border-black py-2">
-            <label class="italic block lowercase tracking-normal text-black text-xl font-medium mb-0" 
+            <label class="italic block lowercase tracking-normal text-black text-l font-light mb-0" 
             for="grid-first-name">email:
         </label>
             <FormInput
@@ -79,7 +79,7 @@ export default class SignUp extends React.Component{
             
             </div>
             <div class="flex items-center border-b border-b-2 border-black py-2">
-            <label class="italic block lowercase tracking-wide text-black text-xl font-medium mb-2" for="grid-first-name">password:</label>
+            <label class="italic block lowercase tracking-wide text-black text-l font-light mb-2" for="grid-first-name">password:</label>
             <FormInput
                             type="password"  
                             // aria-label="Full name" 
@@ -92,7 +92,7 @@ export default class SignUp extends React.Component{
                             
             </div>
             <div class="flex items-center border-b border-b-2 border-black py-2">
-            <label class="italic block lowercase tracking-wide text-black text-xl font-medium mb-2" for="grid-first-name">confirm password:</label>
+            <label class="italic block lowercase tracking-wide text-black text-l font-light mb-2" for="grid-first-name">confirm password:</label>
             <FormInput
                             type="password"  
                             // aria-label="Full name" 
